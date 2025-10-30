@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+ <!DOCTYPE html>
+<!-- Declaración del tipo de documento. Indica al navegador que usamos HTML5. -->
+<html lang="es">
+  <head>
+    <!-- METADATOS ESENCIALES: estos ayudan a que la página funcione bien en todos los dispositivos. -->
+    <meta charset="UTF-8" />
+    <!-- Hace que el ancho de la página se adapte al dispositivo y controla el nivel de zoom inicial. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- El título aparece en la pestaña del navegador y en los resultados de búsqueda. -->
+    <title>Demo HTML (basada en Simple.css)</title>
+
+    <!-- Breve descripción del contenido de la página. Útil para buscadores y para compartir. -->
+    <meta
+      name="description"
+      content="Página de demostración con ejemplos de etiquetas HTML, semántica y buenas prácticas para uso docente."
+    />
+
+    <!-- Autor responsable del documento. Informativo. -->
+    <meta name="author" content="Profesor de Lenguajes de Marcas" />
+
+    <!-- RENDIMIENTO (opcional y didáctico): se sugiere al navegador abrir una conexión temprana con el dominio del CSS externo. -->
+    <link rel="preconnect" href="https://cdn.simplecss.org" crossorigin />
+
+    <!-- Hoja de estilos externa para que el ejemplo se vea legible. Se verá cómo separar estructura (HTML) de presentación (CSS). -->
+    <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css" /> -->
+    <!-- Pendiente -> añadir hoja de estilo + estructura (descomentar la línea siguiente). -->
+    <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+
+    <!-- Pequeño icono que se muestra en la pestaña del navegador (favicon). -->
+    <!-- URL: https://www.favicon-generator.org/ -->
+
+    <!-- Usado por accesibilidad. Versión antigua: se usaba para que Internet Explorer reconociera el favicon.
+     Hoy ya casi no se usa, pero a veces aparece en generadores de favicons. -->
+    <link rel="shortcut icon" href="XXX" type="image/x-icon" />
+
+    <!-- Versión estándar y recomendada: indica al navegador dónde está el favicon. -->
+    <link rel="icon" href="XXX" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- ENLACE DE SALTO: permite a usuarios de teclado/lectores de pantalla ir directo al contenido principal. 
+         La clase .visually-hidden se definirá en CSS en otra unidad (no aquí). -->
+    <a href="#contenido" class="visually-hidden"
+      >Saltar al contenido principal</a
+    >
+
+    <!-- ENCABEZADO GLOBAL DEL SITIO (header): suele contener el logotipo, el título y la navegación principal. -->
+    <header>
+      <!-- NAV: bloque de navegación. "aria-label" describe su propósito a tecnologías de asistencia. -->
+      <nav aria-label="Navegación principal">
+        <!-- Es buena práctica listar los enlaces de navegación dentro de una lista <ul>. -->
+        <ul>
+          <!-- "aria-current='page'" marca el enlace de la página actual. -->
+          <li><a href="/" aria-current="page">Inicio</a></li>
+          <!-- Enlaces externos con target="_blank" deben llevar rel="noopener noreferrer" por seguridad. -->
+          <li>
+            <a
+              href="https://github.com/kevquirk/simple.css/wiki"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Documentación</a
+            >
+          </li>
+          <!-- La clase "current" es una convención visual del tema Simple.css para resaltar el enlace actual. -->
+          <li><a href="/demo" class="current">Ejemplo</a></li>
+          <li><a href="/news">Noticias</a></li>
+          <li>
+            <a
+              href="https://github.com/kevquirk/simple.css"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <!-- SVG: imagen vectorial embebida. 
+                   role="img" + title/desc mejoran la accesibilidad. focusable="false" evita foco no deseado. -->
+              <svg
+                class="icon"
+                viewBox="0 0 32 32"
+                role="img"
+                aria-labelledby="ico-github-title ico-github-desc"
+                focusable="false"
+              >
+                <title id="ico-github-title">GitHub</title>
+                <desc id="ico-github-desc">
+                  Enlace al repositorio en GitHub
+                </desc>
+                <path
+                  d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"
+                ></path>
+              </svg>
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- h1: encabezado principal de la página. Debe describir el propósito del documento. -->
+      <h1>Joder que es esto</h1>
+      <!-- Breve introducción al contenido de la página. -->
+      <p>
+       ububuebuebueonytwebuebuewemubenosas.
+      </p>
+    </header>
+
+    <!-- MAIN: región principal del contenido de la página. 
+         id="contenido" permite que el enlace "Saltar al contenido" funcione. tabindex="-1" facilita llevar el foco aquí por accesibilidad
+         sin entrar en el orden natural de TAB. -->
+    <main id="contenido" tabindex="-1">
+      <!-- NOTICE: caja informativa. La clase .notice es de la hoja de estilos externa. -->
+      <p class="notice" id="notice-intro">
+        Esta página muestra distintas etiquetas HTML para explicar su uso en
+        clase. Muchos bloques incluyen
+        <em>fragmentos de código</em> de ejemplo.
+      </p>
+
+      <!-- SECCIÓN: tipografía básica y encabezados de ejemplo. -->
+      <h2 id="tipografia-basica">Tipografía básica</h2>
+      <p>
+        Texto de párrafo normal. Las medidas usan <code>rem</code> para
+        accesibilidad. Por ejemplo,
+        <abbr title="Hojas de Estilo en Cascada">CSS</abbr> permite adaptar
+        tamaños según preferencias del usuario.
+      </p>
+
+      <!-- Esta sección agrupa encabezados H1–H6 solo con fines didácticos (muestra de niveles). -->
+      <section aria-labelledby="ej-encabezados">
+        <h3 id="ej-encabezados">Encabezados de ejemplo</h3>
+        <h1>Encabezado H1 (muestra)</h1>
+        <h2>Encabezado H2</h2>
+        <h3>Encabezado H3</h3>
+        <h4>Encabezado H4</h4>
+        <h5>Encabezado H5</h5>
+        <h6>Encabezado H6</h6>
+
+        <!-- Ejemplo de cómo mostrar código en la página con <pre><code>. -->
+        <div class="highlight">
+          <pre><code>&lt;h2&gt;Encabezado H2&lt;/h2&gt;
+&lt;p&gt;Párrafo de ejemplo.&lt;/p&gt;</code></pre>
+        </div>
+      </section>
+
+      <section aria-labelledby="caracteres-html">
+        <h3 id="caracteres-html">
+          Caracteres especiales: lo que escribes y lo que se ve
+        </h3>
+
+        <p>
+          <strong>Nota breve:</strong> “Escapar” significa escribir ciertos
+          símbolos (como <code>&lt;</code>, <code>&gt;</code> o
+          <code>&amp;</code>) usando entidades para que el navegador
+          <em>no los interprete</em> como HTML, sino que los muestre como texto.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Escribe esto en HTML</th>
+              <th scope="col">Se verá como</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&amp;lt;</code></td>
+              <td>&lt;</td>
+            </tr>
+            <tr>
+              <td><code>&amp;gt;</code></td>
+              <td>&gt;</td>
+            </tr>
+            <tr>
+              <td><code>&amp;amp;</code></td>
+              <td>&amp;</td>
+            </tr>
+            <tr>
+              <td><code>&amp;quot;</code></td>
+              <td>"</td>
+            </tr>
+            <tr>
+              <td><code>&amp;apos;</code></td>
+              <td>'</td>
+            </tr>
+            <tr>
+              <td><code>&amp;nbsp;</code> (espacio fijo)</td>
+              <td>Hola&nbsp;mundo</td>
+            </tr>
+            <tr>
+              <td><code>&amp;copy;</code></td>
+              <td>©</td>
+            </tr>
+            <tr>
+              <td><code>&amp;reg;</code></td>
+              <td>®</td>
+            </tr>
+            <tr>
+              <td><code>&amp;trade;</code></td>
+              <td>™</td>
+            </tr>
+            <tr>
+              <td><code>&amp;euro;</code></td>
+              <td>€</td>
+            </tr>
+            <tr>
+              <td><code>&amp;mdash;</code> (guión largo)</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><code>&amp;ndash;</code> (guión)</td>
+              <td>–</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Ejemplo rápido</h3>
+
+        <!-- Lo que ESCRIBES (con entidades) -->
+        <figure>
+          <figcaption>Lo que escribes en el HTML</figcaption>
+          <pre><code>&amp;lt;h2&amp;gt;Encabezado H2&amp;lt;/h2&amp;gt;
+&amp;lt;p&amp;gt;Párrafo de ejemplo.&amp;lt;/p&amp;gt;</code></pre>
+        </figure>
+
+        <!-- Lo que SE VE (resultado tras escapar): se muestran literalmente los signos < y > -->
+        <figure>
+          <figcaption>Lo que se ve en la página</figcaption>
+          <pre><code>&lt;h2&gt;Encabezado H2&lt;/h2&gt;
+&lt;p&gt;Párrafo de ejemplo.&lt;/p&gt;</code></pre>
+        </figure>
+      </section>
+
+      <!-- DEMOSTRACIÓN DE TEXTO ENRIQUECIDO: elementos inline comunes. -->
+      <h3 id="texto-enriquecido">Texto enriquecido</h3>
+      <p>
+        <strong>Negrita con significado</strong>, <em>cursiva con énfasis</em>,
+        <u>subrayado</u>, <mark>resaltado</mark>, <small>texto pequeño</small>,
+        <del>texto eliminado</del>, <ins>texto insertado</ins>, x<sup>2</sup> y
+        H<sub>2</sub>O, cita corta con
+        <q cite="https://example.com">comillas</q> y autor con
+        <cite>— Autora Anónima</cite>.
+      </p>
+      <p>
+        Variables en código: <var>x</var> + <var>y</var> =
+        <samp>resultado</samp>. Atajo de teclado: <kbd>Ctrl</kbd> +
+        <kbd>C</kbd>.
+      </p>
+      <ul>
+        <li>
+          Enlace de ejemplo:
+          <a
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visitar ejemplo</a
+          >
+        </li>
+        <li><code>inline code</code> dentro del texto</li>
+      </ul>
+
+      <h3>
+        Uso de <code>&lt;span&gt;</code> como elemento en línea (display:
+        inline)
+      </h3>
+
+      <p>
+        <!-- Los span son elementos en línea, se colocan uno al lado del otro -->
+        <span class="notice">Bloque 1</span>
+        <span class="notice">Bloque 2</span>
+        <span class="notice">Bloque 3</span>
+        <span class="notice">Bloque 4</span>
+      </p>
+
+      <p>
+        Los <code>&lt;span&gt;</code> son elementos <strong>inline</strong>, por
+        eso aparecen en la misma línea mientras haya espacio disponible.
+        <br />
+        En cambio, etiquetas como <code>&lt;div&gt;</code> son
+        <strong>block</strong>, lo que significa que cada una ocupa todo el
+        ancho disponible y se apila verticalmente.
+      </p>
+
+      <h3>Ejemplo de <code>&lt;div&gt;</code> (display: block)</h3>
+
+      <div class="notice">Bloque A</div>
+      <div class="notice">Bloque B</div>
+      <div class="notice">Bloque C</div>
+      <div class="notice">Bloque D</div>
+
+      <p>
+        Los <code>&lt;div&gt;</code> son elementos <strong>block</strong>, por
+        lo que cada uno ocupa todo el ancho disponible y se muestra en una línea
+        separada. A diferencia de los <code>&lt;span&gt;</code>, no se alinean
+        en horizontal, sino que se apilan verticalmente.
+      </p>
+
+      <!-- LISTAS: sin orden, ordenadas y de definición. -->
+      <h3 id="listas">Listas</h3>
+      <p>Lista sin orden:</p>
+      <ul>
+        <li>Elemento A</li>
+        <li>Elemento B</li>
+        <li>Elemento C</li>
+      </ul>
+
+      <p>Lista ordenada:</p>
+      <ol>
+        <li>Paso 1</li>
+        <li>Paso 2</li>
+        <li>Paso 3</li>
+      </ol>
+
+      <p>Lista de definición (términos y descripciones):</p>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado para documentos web.</dd>
+        <dt>CSS</dt>
+        <dd>Hojas de estilo en cascada para presentación.</dd>
+      </dl>
+
+      <!-- Más ejemplos de presentación de código. -->
+      <div class="highlight">
+        <pre><code># Lista sin orden
+&lt;ul&gt;…&lt;/ul&gt;
+
+# Lista de definición
+&lt;dl&gt;
+  &lt;dt&gt;Término&lt;/dt&gt;
+  &lt;dd&gt;Definición&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </div>
+
+      <!-- CITA EN BLOQUE: para citas largas. "cite" puede enlazar a la fuente. -->
+      <h3 id="blockquotes">Citas (blockquote)</h3>
+      <p>Una cita en bloque con autor:</p>
+      <blockquote cite="https://www.goodreads.com/quotes">
+        <p>
+          “La educación es el arma más poderosa que puedes usar para cambiar el
+          mundo.”
+        </p>
+        <p><cite>— Nelson Mandela</cite></p>
+      </blockquote>
+
+      <div class="highlight">
+        <pre><code>&lt;blockquote&gt;
+  &lt;p&gt;Cita…&lt;/p&gt;
+  &lt;p&gt;&lt;cite&gt;— Autora&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+      </div>
+
+      <!-- CÓDIGO: diferencias entre inline (<code>) y bloque (<pre><code>). -->
+      <h3 id="code-blocks">Bloques de código</h3>
+      <p>Bloque de código con estilos por defecto:</p>
+      <div class="highlight">
+        <pre><code>body {
+  color: var(--text);
+  background: var(--bg);
+}</code></pre>
+      </div>
+
+      <div class="highlight">
+        <pre><code>&lt;pre&gt;
+&lt;code&gt;…&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
+      </div>
+
+      <!-- OTROS ELEMENTOS SEMÁNTICOS: avisos, aside, etc. -->
+      <h2 id="otros-elementos">Otros elementos semánticos</h2>
+
+      <!-- Caja de aviso: ejemplo de texto destacado. -->
+      <h3 id="notice-box">Caja de aviso</h3>
+      <p class="notice" aria-describedby="notice-intro">
+        Este es un aviso para resaltar información relevante (usa la clase
+        <code>.notice</code>).
+      </p>
+
+      <!-- ASIDE: contenido complementario al principal. Puede ser una nota, glosario, etc. -->
+      <h3 id="aside">Aside</h3>
+      <aside aria-label="Información complementaria">
+        <p>
+          <strong>Aside:</strong> contenido lateral que complementa el principal
+          (definición, glosario, nota al margen, etc.).
+        </p>
+      </aside>
+
+      <!-- ARTÍCULO: contenido independiente, con su propio encabezado y pie. Ideal para posts o noticias. -->
+      <h3 id="article">Artículo</h3>
+      <article aria-labelledby="art-titulo">
+        <header>
+          <h2 id="art-titulo">La semántica en HTML: por qué importa</h2>
+          <!-- <time datetime> da una fecha legible por máquinas y personas. -->
+          <p>
+            Por <span class="author">María López</span>. Publicado el
+            <time datetime="2025-10-07">7 de octubre de 2025</time>.
+          </p>
+        </header>
+
+        <section>
+          <h4>Intención semántica</h4>
+          <p>
+            Usar etiquetas semánticas (como <code>&lt;main&gt;</code>,
+            <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>,
+            <code>&lt;aside&gt;</code> y <code>&lt;footer&gt;</code>) ayuda a la
+            accesibilidad, al SEO y al mantenimiento del código.
+          </p>
+        </section>
+
+        <section>
+          <h4>Beneficios para accesibilidad</h4>
+          <p>
+            Los lectores de pantalla entienden mejor la estructura del
+            documento. Además, los atajos de navegación por regiones funcionan
+            de forma más predecible.
+          </p>
+          <ul>
+            <li>Navegación por landmarks: header, main, nav, footer…</li>
+            <li>
+              Relación <code>&lt;label&gt;</code> y
+              <code>&lt;input&gt;</code> en formularios.
+            </li>
+            <li>
+              Tablas con <code>&lt;caption&gt;</code> y <code>scope</code> en
+              cabeceras.
+            </li>
+          </ul>
+        </section>
+
+        <footer>
+          <p>
+            <small>
+              Categorías: <a href="#">HTML</a>,
+              <a href="#">Accesibilidad</a>
+            </small>
+          </p>
+        </footer>
+      </article>
+
+      <div class="highlight">
+        <pre><code>&lt;article&gt;
+  &lt;header&gt;…&lt;/header&gt;
+  &lt;section&gt;…&lt;/section&gt;
+  &lt;footer&gt;…&lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <!-- SECTION: grupo de contenido relacionado con su propio título. -->
+      <h3 id="section">Sección</h3>
+      <p>Las secciones agrupan contenido relacionado dentro de la página.</p>
+      <section aria-labelledby="sec-ejemplo">
+        <h2 id="sec-ejemplo">Sección de ejemplo</h2>
+        <p>Contenido de la sección con su propio encabezado.</p>
+      </section>
+
+      <div class="highlight">
+        <pre><code>&lt;section&gt;
+  &lt;h2&gt;Título de la sección&lt;/h2&gt;
+  &lt;p&gt;Contenido…&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      </div>
+
+      <!-- NAVEGACIÓN SECUNDARIA: otra barra de enlaces, por ejemplo, tabla de contenidos. -->
+      <h2 id="navigation">Navegación</h2>
+      <p>Un menú simple que se adapta a pantallas pequeñas sin JS:</p>
+      <nav aria-label="Tabla de contenidos">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/acerca">Acerca</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="highlight">
+        <pre><code>&lt;nav aria-label="Tabla de contenidos"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    …
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <!-- IMÁGENES: ejemplos con alt (texto alternativo), dimensiones y lazy loading para rendimiento. -->
+      <h2 id="images">Imágenes</h2>
+      <p>
+        Imágenes dentro de <code>&lt;main&gt;</code> con bordes redondeados
+        (estilo del tema):
+      </p>
+      <p>
+        <img
+          src="assets/images/dog-ipad.jpg"
+          alt="Un perro usando una tablet"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+      </p>
+
+      <figure>
+        <img
+          alt="Un cisne negro"
+          src="assets/images/goose.jpg"
+          width="1200"
+          height="800"
+          loading="lazy"
+        />
+        <figcaption>Ejemplo de imagen con pie de foto descriptivo.</figcaption>
+      </figure>
+
+      <div class="highlight">
+        <pre><code># Imagen básica
+&lt;img alt="Descripción" src="ruta.jpg" width="W" height="H" loading="lazy" /&gt;
+
+# Imagen con pie
+&lt;figure&gt;
+  &lt;img alt="Descripción" src="ruta.jpg" width="W" height="H" loading="lazy" /&gt;
+  &lt;figcaption&gt;Pie de foto&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+      </div>
+
+      <!-- DETAILS/SUMMARY: componente nativo para mostrar/ocultar contenidos. 
+           El atributo "name" permite un comportamiento de acordeón (solo uno abierto a la vez). -->
+      <h2 id="details-accordions">Detalles y acordeones</h2>
+      <details>
+        <summary>Haz clic para ver más</summary>
+        <p>Este contenido se oculta/expande sin JavaScript.</p>
+      </details>
+
+      <p>
+        Ejemplo de acordeón (un abierto a la vez) usando el mismo atributo
+        <code>name</code>:
+      </p>
+      <details name="faq">
+        <summary>FAQ 1</summary>
+        <p>Respuesta 1.</p>
+      </details>
+      <details name="faq">
+        <summary>FAQ 2</summary>
+        <p>Respuesta 2.</p>
+      </details>
+      <details name="faq">
+        <summary>FAQ 3</summary>
+        <p>Respuesta 3.</p>
+      </details>
+
+      <div class="highlight">
+        <pre><code>&lt;details name="faq"&gt;
+  &lt;summary&gt;Pregunta&lt;/summary&gt;
+  &lt;p&gt;Respuesta&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      </div>
+
+      <!-- TABLAS: ejemplo accesible con caption (título) y scope (asociación de cabeceras). -->
+      <h2 id="tables">Tablas</h2>
+      <p>
+        Tabla con <code>&lt;caption&gt;</code> y <code>scope</code> en
+        cabeceras:
+      </p>
+      <table>
+        <caption>
+          Listado de nombres y números
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Número</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Jackie</th>
+            <td>012345</td>
+          </tr>
+          <tr>
+            <th scope="row">Lucy</th>
+            <td>112346</td>
+          </tr>
+          <tr>
+            <th scope="row">David</th>
+            <td>493029</td>
+          </tr>
+          <tr>
+            <th scope="row">Kerry</th>
+            <td>395499</td>
+          </tr>
+          <tr>
+            <th scope="row">Steve</th>
+            <td>002458</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Si la tabla es muy ancha, se puede envolver en <figure> y dejar que haga scroll horizontal. -->
+      <p>
+        Si la tabla es muy ancha, envuélvela en <code>&lt;figure&gt;</code> para
+        scroll horizontal:
+      </p>
+      <figure>
+        <table>
+          <caption>
+            Preferencias curiosas
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Número</th>
+              <th scope="col">Opinión sobre el queso</th>
+              <th scope="col">Té favorito</th>
+              <th scope="col">Color</th>
+              <th scope="col">Dato inusual</th>
+              <th scope="col">¿Caballo?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Jackie</th>
+              <td>012345</td>
+              <td>A veces</td>
+              <td>Earl Grey</td>
+              <td>Azul</td>
+              <td>Habla en metáforas</td>
+              <td>Sí</td>
+            </tr>
+            <tr>
+              <th scope="row">Lucy</th>
+              <td>112346</td>
+              <td>Solo martes</td>
+              <td>Verde</td>
+              <td>Verde</td>
+              <td>Vio un tejón australiano</td>
+              <td>Sí</td>
+            </tr>
+            <tr>
+              <th scope="row">David</th>
+              <td>493029</td>
+              <td>Siempre comer la corteza</td>
+              <td>London Fog</td>
+              <td>Púrpura</td>
+              <td>Nunca estuvo en Londres</td>
+              <td>Sí</td>
+            </tr>
+            <tr>
+              <th scope="row">Kerry</th>
+              <td>395499</td>
+              <td>Está en la luna</td>
+              <td>Manzanilla</td>
+              <td>Amarillo</td>
+              <td>Ha estado en la luna</td>
+              <td>Sí</td>
+            </tr>
+            <tr>
+              <th scope="row">Steve</th>
+              <td>002458</td>
+              <td>No</td>
+              <td>Té negro (ISO 3103)</td>
+              <td>Castaño</td>
+              <td>Visión de 350°</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          Tabla ancha con comportamiento de scroll horizontal.
+        </figcaption>
+      </figure>
+
+      <div class="highlight">
+        <pre><code>&lt;table&gt;
+  &lt;caption&gt;…&lt;/caption&gt;
+  &lt;thead&gt;…&lt;/thead&gt;
+  &lt;tbody&gt;…&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+
+      <!-- FORMULARIOS: ejemplo accesible con fieldset/legend, labels asociados y diferentes tipos de input. -->
+      <h2 id="forms">Formularios</h2>
+      <p><strong>Este formulario es de prueba, no envía datos.</strong></p>
+
+      <!-- aria-describedby enlaza con un texto que explica el propósito del formulario. -->
+      <form aria-describedby="nota-form">
+        <p id="nota-form">
+          <small>
+            Ejemplos de inputs con etiquetas accesibles y validación básica.
+          </small>
+        </p>
+
+        <!-- FIELDSET agrupa campos relacionados; LEGEND los titula. -->
+        <fieldset>
+          <legend>Datos personales</legend>
+
+          <p>
+            <label for="titulo">Tratamiento</label>
+            <!-- autocomplete ayuda al navegador a sugerir valores apropiados. -->
+            <select id="titulo" name="titulo" autocomplete="honorific-prefix">
+              <option value="">Selecciona…</option>
+              <option value="sr">Sr.</option>
+              <option value="sra">Sra.</option>
+              <option value="otro">Otro</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="nombre">Nombre</label>
+            <!-- "required" obliga a completar el campo antes de enviar. -->
+            <input
+              id="nombre"
+              type="text"
+              name="nombre"
+              autocomplete="given-name"
+              required
+            />
+          </p>
+
+          <p>
+            <label for="apellidos">Apellidos</label>
+            <input
+              id="apellidos"
+              type="text"
+              name="apellidos"
+              autocomplete="family-name"
+            />
+          </p>
+
+          <p>
+            <label for="email">Correo electrónico</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              required
+              autocomplete="email"
+            />
+          </p>
+
+          <p>
+            <label for="telefono">Teléfono</label>
+            <!-- pattern restringe el formato del texto. inputmode guía el teclado en móviles. -->
+            <input
+              id="telefono"
+              name="telefono"
+              type="tel"
+              autocomplete="tel"
+              inputmode="tel"
+              placeholder="+34 600 000 000"
+              pattern="^\+?\d[\d\s\-]{7,}$"
+            />
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferencias</legend>
+
+          <!-- Grupo de botones de opción (radio). Comparten el mismo "name" para formar un conjunto. -->
+          <p>
+            <span id="tipo-consulta-label">Tipo de consulta:</span><br />
+            <label
+              ><input
+                type="radio"
+                name="tipo"
+                value="ventas"
+                aria-describedby="tipo-consulta-label"
+                checked
+              />
+              Ventas</label
+            >
+            <label>
+              <input
+                type="radio"
+                name="tipo"
+                value="soporte"
+                aria-describedby="tipo-consulta-label"
+              />
+              Soporte
+            </label>
+            <label
+              ><input
+                type="radio"
+                name="tipo"
+                value="facturacion"
+                aria-describedby="tipo-consulta-label"
+              />
+              Facturación</label
+            >
+          </p>
+
+          <p>
+            <!-- "multiple" permite seleccionar más de una opción. "size" define cuántas se ven sin desplegar. -->
+            <label for="coches">Elige un coche (múltiple)</label>
+            <select id="coches" name="coches" multiple size="4">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="color">Color favorito</label>
+            <!-- Tipo color muestra un selector de color del navegador. -->
+            <input id="color" type="color" name="color" value="#ff0000" />
+          </p>
+
+          <p>
+            <label for="rango">Nivel de satisfacción (0–10)</label>
+            <!-- Tipo range crea un deslizador. -->
+            <input
+              id="rango"
+              type="range"
+              name="satisfaccion"
+              min="0"
+              max="10"
+              value="7"
+            />
+          </p>
+
+          <p>
+            <label for="edad">Edad</label>
+            <!-- type="number" con min/max/step restringe el rango de valores numéricos. -->
+            <input
+              id="edad"
+              type="number"
+              name="edad"
+              min="0"
+              max="120"
+              step="1"
+            />
+          </p>
+
+          <p>
+            <label for="fecha">Fecha preferida</label>
+            <!-- Selector de fecha nativo. -->
+            <input id="fecha" type="date" name="fecha" />
+          </p>
+
+          <p>
+            <label for="sitio">Sitio web</label>
+            <!-- type="url" aplica una validación sencilla de formato URL. -->
+            <input
+              id="sitio"
+              type="url"
+              name="sitio"
+              placeholder="https://…"
+              autocomplete="url"
+            />
+          </p>
+
+          <p>
+            <label for="busqueda">Búsqueda con sugerencias</label>
+            <!-- list="id-de-datalist" conecta el input con un conjunto de opciones sugeridas. -->
+            <input
+              id="busqueda"
+              name="busqueda"
+              list="sugerencias"
+              placeholder="Escribe para ver sugerencias…"
+            />
+            <datalist id="sugerencias">
+              <option value="HTML"></option>
+              <option value="CSS"></option>
+              <option value="JavaScript"></option>
+            </datalist>
+          </p>
+
+          <p>
+            <label for="mensaje">Mensaje</label>
+            <!-- aria-describedby enlaza con un texto de ayuda asociado. -->
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="5"
+              maxlength="500"
+              aria-describedby="ayuda-mensaje"
+            ></textarea>
+            <small id="ayuda-mensaje">Máximo 500 caracteres.</small>
+          </p>
+
+          <p>
+            <!-- Checkbox de aceptación de términos. "required" obliga a marcarlo. -->
+            <label
+              ><input type="checkbox" id="terminos" name="terminos" required />
+              Acepto los
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                >términos y condiciones</a
+              ></label
+            >
+          </p>
+
+          <!-- METERS y PROGRESS muestran indicadores visuales. No son de envío de datos, solo de estado. -->
+          <p>
+            <meter id="nivel" min="0" max="100" value="65">65%</meter> Nivel
+            estimado de completado
+          </p>
+
+          <p>
+            <label for="progreso">Subida de archivo (simulada)</label><br />
+            <progress id="progreso" value="30" max="100">30%</progress>
+          </p>
+
+          <!-- OUTPUT: muestra resultados calculados. 
+               El atributo "for" indica los inputs de los que depende. aria-live="polite" comunica cambios a lectores de pantalla. -->
+          <p>
+            <label for="calculo">Suma (con <code>&lt;output&gt;</code>)</label
+            ><br />
+            <input
+              type="number"
+              id="a"
+              name="a"
+              value="2"
+              aria-label="Sumando A"
+            />
+            +
+            <input
+              type="number"
+              id="b"
+              name="b"
+              value="3"
+              aria-label="Sumando B"
+            />
+            =
+            <output id="calculo" for="a b" aria-live="polite">5</output>
+          </p>
+        </fieldset>
+
+        <!-- Botones de acción del formulario. 
+             type="button" no envía; type="reset" limpia el formulario; type="submit" intentaría enviarlo (aunque aquí es de prueba). -->
+        <p>
+          <button type="submit">Enviar</button>
+          <button type="reset">Restablecer</button>
+          <button type="button" disabled>Deshabilitado</button>
+        </p>
+      </form>
+
+      <!-- Resumen de estructura de formularios mostrado como código. -->
+      <div class="highlight">
+        <pre><code>&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;…&lt;/legend&gt;
+    &lt;label for="id"&gt;…&lt;/label&gt;
+    &lt;input id="id" … /&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+    </main>
+
+    <!-- FOOTER: información final del sitio y datos de contacto. 
+         <address> describe la información de contacto del autor o de la organización. -->
+    <footer>
+      <p>
+        Demo educativa creada en Rota para el módulo de Lenguajes de Marcas .<br />
+        Autoría: <a href="#" rel="author">Jesús Arcis</a> · Licencia: MIT
+      </p>
+      <address>
+        Contacto:
+        <a href="mailto:jarcdia091@g.educaand.es">
+          Contacta en: jarcdia091@g.educaand.es</a
+        >
+        ·
+        <a href="tel:+34600000000">+34 600 000 000</a>
+      </address>
+    </footer>
+
+    <!-- SCRIPT DIDÁCTICO: actualiza el resultado de la suma en <output> cuando cambian los campos numéricos.
+         El JS no es necesario para entender HTML, pero ilustra cómo <output> puede reaccionar a entradas. -->
+    <script>
+      (function () {
+        const a = document.getElementById("a");
+        const b = document.getElementById("b");
+        const out = document.getElementById("calculo");
+        function update() {
+          out.value = (Number(a.value) || 0) + (Number(b.value) || 0);
+        }
+        a.addEventListener("input", update);
+        b.addEventListener("input", update);
+      })();
+    </script>
+  </body>
+</html>
+      </section>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;section&gt;
+&lt;h2&gt;This is a section&lt;/h2&gt;
+&lt;p&gt;Some content will go here, which will be inside your section.&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <h2 id="navigation">Navigation</h2>
+
+      <p>
+        The <code class="language-plaintext highlighter-rouge">nav</code> menu
+        is deliberately designed to be extremely simple so that you can improve
+        on it as you see fit. Or, just leave it as is to have a good looking,
+        functional navigation menu.
+      </p>
+
+      <p>
+        Navigation menus inside the
+        <code class="language-plaintext highlighter-rouge">header</code> are
+        automatically formatted like the one on this site. If you decide to put
+        a <code class="language-plaintext highlighter-rouge">nav</code> menu
+        elsewhere on your site, for example in a post for a table of contents,
+        no formatting is applied. This is so you can add your own formatting as
+        you see fit.
+      </p>
+
+      <p>
+        There’s no JavaScript or checkbox CSS hacks here. It’s just a collection
+        of simple “buttons” that wrap to the given width of the page.
+      </p>
+
+      <p>
+        The <code class="language-plaintext highlighter-rouge">nav</code> menu
+        will also adapt to smaller screens automatically so that it doesn’t take
+        up too much space.
+      </p>
+
+      <p>
+        To add a
+        <code class="language-plaintext highlighter-rouge">nav</code> menu, just
+        add the following to the
+        <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code>
+        section of your site:
+      </p>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;nav&gt;
+  &lt;a href="/"&gt;Home&lt;/a&gt;
+  &lt;a href="/about"&gt;About&lt;/a&gt;
+  &lt;a href="/blog"&gt;Blog&lt;/a&gt;
+  &lt;a href="/notes"&gt;Notes&lt;/a&gt;
+  &lt;a href="/guestbook"&gt;Guestbook&lt;/a&gt;
+  &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <h2 id="images">Images</h2>
+
+      <p>
+        In Simple.css, images within the
+        <code class="language-plaintext highlighter-rouge">main</code> element
+        are always full width and have rounded edges to them. The
+        <code class="language-plaintext highlighter-rouge">figcaption</code>
+        element is also formatted in Simple.css. Here are examples of images
+        with and without a caption:
+      </p>
+
+      <p><img src="/assets/images/dog-ipad.jpg" alt="A dog at an iPad" /></p>
+
+      <figure>
+        <img alt="This is a black swan" src="/assets/images/goose.jpg" />
+        <figcaption>This is a black swan</figcaption>
+      </figure>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code># Standard image
+&lt;img alt="A dog on an iPad" src="/assets/images/dog-ipad.jpg" /&gt;
+
+# Image with a caption
+&lt;figure&gt;
+  &lt;img alt="This is a black swan" src="/assets/images/goose.jpg" /&gt;
+  &lt;figcaption&gt;This is a black swan&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <h2 id="details--accordions">Details &amp; Accordions</h2>
+
+      <p>
+        Details elements are cool to play with. They’re especially useful when
+        it comes to things like FAQ pages. Many people invoke JavaScript, or
+        <code class="language-plaintext highlighter-rouge">div</code> for life
+        when they use accordions. I don’t really understand why that is when
+        it’s available in plain old HTML:
+      </p>
+
+      <details>
+        <summary>Spoiler alert!</summary>
+        <p>You smell. 🙂</p>
+      </details>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;details&gt;
+  &lt;summary&gt;Spoiler alert!&lt;/summary&gt;
+  &lt;p&gt;You smell. 🙂&lt;/p&gt;
+&lt;/details&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <p>
+        The
+        <code class="language-plaintext highlighter-rouge">details</code>
+        element can also be made to work as an accordion where one element opens
+        and others in the list close. Like this:
+      </p>
+
+      <details name="faq">
+        <summary>FAQ 1</summary>
+        <p>Can you smell that?</p>
+      </details>
+
+      <details name="faq">
+        <summary>FAQ 2</summary>
+        <p>Something really stinks.</p>
+      </details>
+
+      <details name="faq">
+        <summary>FAQ 3</summary>
+        <p>Oh, it's you. 🙂</p>
+      </details>
+
+      <p>
+        To do this, you need to group the
+        <code class="language-plaintext highlighter-rouge">details</code>
+        elements together with a
+        <code class="language-plaintext highlighter-rouge">name</code>, like
+        this:
+      </p>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;details name="faq" &gt;
+  &lt;summary&gt;FAQ 1&lt;/summary&gt;
+  &lt;p&gt;Can you smell that?&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details name="faq" &gt;
+  &lt;summary&gt;FAQ 2&lt;/summary&gt;
+  &lt;p&gt;Something really stinks.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details name="faq" &gt;
+  &lt;summary&gt;FAQ 3&lt;/summary&gt;
+  &lt;p&gt;Oh, it's you. 🙂&lt;/p&gt;
+&lt;/details&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <h2 id="tables">Tables</h2>
+
+      <p>
+        Like lists, sometimes you may need to add a table to your webpage. In
+        Simple.css tables automatically highlight every other row to make
+        reading easier. Table header text is also bold. Here’s what they look
+        like:
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jackie</td>
+            <td>012345</td>
+          </tr>
+          <tr>
+            <td>Lucy</td>
+            <td>112346</td>
+          </tr>
+          <tr>
+            <td>David</td>
+            <td>493029</td>
+          </tr>
+          <tr>
+            <td>Kerry</td>
+            <td>395499</td>
+          </tr>
+          <tr>
+            <td>Steve</td>
+            <td>002458</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Number&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Jackie&lt;/td&gt;
+      &lt;td&gt;012345&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lucy&lt;/td&gt;
+      &lt;td&gt;112346&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;David&lt;/td&gt;
+      &lt;td&gt;493029&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Kerry&lt;/td&gt;
+      &lt;td&gt;395499&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Steve&lt;/td&gt;
+      &lt;td&gt;002458&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <p>
+        If your table is too wide to fit on the page, wrap it in a
+        <code class="language-plaintext highlighter-rouge">&lt;figure&gt;</code>
+        element to add horizontal scrolling:
+      </p>
+
+      <figure>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Opinion on cheese</th>
+              <th>Favourite tea</th>
+              <th>Colour of choice</th>
+              <th>Unusual fact</th>
+              <th>Horse?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Jackie</td>
+              <td>012345</td>
+              <td>Sometimes</td>
+              <td>Earl grey, hot</td>
+              <td>Blue</td>
+              <td>Communicates exclusively in metaphors</td>
+              <td>Aye</td>
+            </tr>
+            <tr>
+              <td>Lucy</td>
+              <td>112346</td>
+              <td>Only on Tuesdays</td>
+              <td>The green one</td>
+              <td>The green one</td>
+              <td>Caught a glimpse of an Australian badger</td>
+              <td>Aye</td>
+            </tr>
+            <tr>
+              <td>David</td>
+              <td>493029</td>
+              <td>Always eat the rind</td>
+              <td>London fog</td>
+              <td>Purple</td>
+              <td>Has never been to London</td>
+              <td>Aye</td>
+            </tr>
+            <tr>
+              <td>Kerry</td>
+              <td>395499</td>
+              <td>It's on the moon</td>
+              <td>Camomile</td>
+              <td>Yellow</td>
+              <td>Has been to the moon</td>
+              <td>Aye</td>
+            </tr>
+            <tr>
+              <td>Steve</td>
+              <td>002458</td>
+              <td>No</td>
+              <td>Black tea brewed using ISO 3103</td>
+              <td>Chestnut</td>
+              <td>Has a 350° field of view</td>
+              <td>Neigh</td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption>
+          A wide table showing horizontal scroll behavior.
+        </figcaption>
+      </figure>
+
+      <div class="language-plaintext highlighter-rouge">
+        <div class="highlight">
+          <pre class="highlight"><code>&lt;figure&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Number&lt;/th&gt;
+        &lt;th&gt;Opinion on cheese&lt;/th&gt;
+        &lt;th&gt;Favourite tea&lt;/th&gt;
+        &lt;th&gt;Colour of choice&lt;/th&gt;
+        &lt;th&gt;Unusual fact&lt;/th&gt;
+        &lt;th&gt;Horse?&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Jackie&lt;/td&gt;
+        &lt;td&gt;012345&lt;/td&gt;
+        &lt;td&gt;Sometimes&lt;/td&gt;
+        &lt;td&gt;Earl grey, hot&lt;/td&gt;
+        &lt;td&gt;Blue&lt;/td&gt;
+        &lt;td&gt;Communicates exclusively in metaphors&lt;/td&gt;
+        &lt;td&gt;Aye&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Lucy&lt;/td&gt;
+        &lt;td&gt;112346&lt;/td&gt;
+        &lt;td&gt;Only on Tuesdays&lt;/td&gt;
+        &lt;td&gt;The green one&lt;/td&gt;
+        &lt;td&gt;The green one&lt;/td&gt;
+        &lt;td&gt;Caught a glimpse of an Australian badger&lt;/td&gt;
+        &lt;td&gt;Aye&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;David&lt;/td&gt;
+        &lt;td&gt;493029&lt;/td&gt;
+        &lt;td&gt;Always eat the rind&lt;/td&gt;
+        &lt;td&gt;London fog&lt;/td&gt;
+        &lt;td&gt;Purple&lt;/td&gt;
+        &lt;td&gt;Has never been to London&lt;/td&gt;
+        &lt;td&gt;Aye&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Kerry&lt;/td&gt;
+        &lt;td&gt;395499&lt;/td&gt;
+        &lt;td&gt;It's on the moon&lt;/td&gt;
+        &lt;td&gt;Camomile&lt;/td&gt;
+        &lt;td&gt;Yellow&lt;/td&gt;
+        &lt;td&gt;Has been to the moon&lt;/td&gt;
+        &lt;td&gt;Aye&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Steve&lt;/td&gt;
+        &lt;td&gt;002458&lt;/td&gt;
+        &lt;td&gt;No&lt;/td&gt;
+        &lt;td&gt;Black tea brewed using ISO 3103&lt;/td&gt;
+        &lt;td&gt;Chestnut&lt;/td&gt;
+        &lt;td&gt;Has a 350° field of view&lt;/td&gt;
+        &lt;td&gt;Neigh&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;figcaption&gt;A wide table showing horizontal scroll behavior.&lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+        </div>
+      </div>
+
+      <h2 id="forms">Forms</h2>
+
+      <p>
+        Forms are useful for all kinds of things on webpages. Contact forms,
+        newsletter sign ups etc. Forms also look pretty good on Simple.css:
+      </p>
+
+      <form>
+        <p>
+          <strong>This is just a test form. It doesn't do anything.</strong>
+        </p>
+        <p>
+          <select>
+            <option selected="selected" value="1">Title</option>
+            <option value="2">Mr</option>
+            <option value="3">Miss</option>
+            <option value="4">Mrs</option>
+            <option value="5">Other</option>
+          </select>
+        </p>
+        <p>
+          <label>First name</label>
+          <input type="text" name="first_name" />
+        </p>
+        <p>
+          <label>Surname</label>
+          <input type="text" name="surname" />
+        </p>
+        <p>
+          <label>Email</label>
+          <input type="email" name="email" required="" />
+        </p>
+        <p>
+          <label>Enquiry type:</label>
+          <label
+            ><input checked="checked" name="type" type="radio" value="sales" />
+            Sales</label
+          >
+          <label
+            ><input name="type" type="radio" value="support" /> Support</label
+          >
+          <label
+            ><input name="type" type="radio" value="billing" /> Billing</label
+          >
+        </p>
+        <p>
+          <label>Message</label>
+          <textarea rows="6"></textarea>
+        </p>
+        <p>
+          <label for="cars">Choose a car:</label>
+          <select name="cars" id="cars" multiple="">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="opel">Opel</option>
+            <option value="audi">Audi</option>
+          </select>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" id="checkbox" value="terms" />
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+        </p>
+
+        <button>Send</button>
+        <button type="reset">Reset</button>
+        <button disabled="disabled">Disabled</button>
+      </form>
+
+      <pre><code class="language-HTML">&lt;form&gt;
+  &lt;p&gt;&lt;strong&gt;This is just a test form. It doesn't do anything.&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;&lt;select&gt;
+    &lt;option selected="selected" value="1"&gt;Title&lt;/option&gt;
+    &lt;option value="2"&gt;Mr&lt;/option&gt;
+    &lt;option value="3"&gt;Miss&lt;/option&gt;
+    &lt;option value="4"&gt;Mrs&lt;/option&gt;
+    &lt;option value="5"&gt;Other&lt;/option&gt;
+  &lt;/select&gt;&lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;First name&lt;/label&gt;
+  &lt;input type="text" name="first_name"&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Surname&lt;/label&gt;
+  &lt;input type="text" name="surname"&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Email&lt;/label&gt;
+  &lt;input type="email" name="email" required=""&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Enquiry type:&lt;/label&gt;
+  &lt;label&gt;&lt;input checked="checked" name="type" type="radio" value="sales" /&gt; Sales&lt;/label&gt; 
+  &lt;label&gt;&lt;input name="type" type="radio" value="support" /&gt; Support&lt;/label&gt; 
+  &lt;label&gt;&lt;input name="type" type="radio" value="billing" /&gt; Billing&lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;Message&lt;/label&gt;
+  &lt;textarea rows="6"&gt;&lt;/textarea&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label for="cars"&gt;Choose a car:&lt;/label&gt;
+  &lt;select name="cars" id="cars" multiple&gt;
+  &lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+  &lt;option value="saab"&gt;Saab&lt;/option&gt;
+  &lt;option value="opel"&gt;Opel&lt;/option&gt;
+  &lt;option value="audi"&gt;Audi&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;/p&gt;
+
+  &lt;p&gt;
+  &lt;label&gt;
+  &lt;input type="checkbox" id="checkbox" value="terms"&gt;
+  I agree to the &lt;a href="#"&gt;terms and conditions&lt;/a&gt;
+  &lt;/label&gt;
+  &lt;/p&gt;
+
+  &lt;button&gt;Send&lt;/button&gt;
+  &lt;button type="reset"&gt;Reset&lt;/button&gt;
+  &lt;button disabled="disabled"&gt;Disabled&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+    </main>
+
+    <footer>
+      <p>
+        Simple.css was created by
+        <a href="https://kevquirk.com">Kev Quirk</a> and is licensed under the
+        MIT license.<br />
+        <a href="https://github.com/kevquirk/simple.css-site"
+          >Source code for this site</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
