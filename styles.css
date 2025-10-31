@@ -1,0 +1,75 @@
+/* Ejemplo de estilos CSS */
+
+.navbar-main {
+  background-color: #fff9fb;
+  text-align: center;
+  padding: 0 20px;
+  height: 50px;
+}
+
+.navbar-secondary {
+  background-color: #f05da1;
+  text-align: center;
+  height: 50px;
+}
+
+a:link {
+  color: #770a6e;
+}
+a:visited {
+  color: #3e45ce;
+}
+a:hover {
+  color: #772650;
+}
+a:active {
+  color: #3edb9a;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: rgb(245, 231, 236);
+}
+
+.cabecera {
+  margin: auto;
+  padding: 0 20px;
+  background-color: rgb(255, 206, 226);
+  text-align: left;
+  height: 200px;
+}
+
+.texto-ajustado {
+  width: 400px;
+  text-align: left;
+  padding: 10px;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: rgb(249, 142, 190);
+}
+
+.h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.blog-content {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
