@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Windely" />
+    <title>Formulario tablas</title>
+  </head>
+
+  <body>
+    <h2>Déjanos tus datos</h2>
+    <form action="./submit_page" method="get">
+      <table style="width:100%">
+        <tr>
+          <td><label for="name">Tu nombre y apellidos</label></td>
+          <td><input type="text" name="name" id="name" required /></td>
+        </tr>
+        <tr>
+          <td><label for="email">Tu email</label></td>
+          <td><input type="email" name="email" id="email" required /></td>
+        </tr>
+        <tr>
+          <td><label for="motivo">Indícanos el motivo del contacto</label></td>
+          <td>
+            <select name="motivo" id="motivo">
+              <option value="Seleccionar">Seleccionar</option>
+              <option value="consulta">Consulta o duda</option>
+              <option value="problemas">Problema usando Idealista</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="referencia">Anuncio o contenido al que hace referencia</label></td>
+          <td><input type="text" id="referencia" name="referencia" required minlength="4" maxlength="8" size="10" /></td>
+        </tr>
+        <tr>
+          <td><label for="comments">Tu mensaje</label></td>
+          <td><textarea id="comments" name="comments" rows="5" cols="33"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="submit">Contactar</button></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
