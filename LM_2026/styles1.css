@@ -1,17 +1,225 @@
-header img {
+/*1. Estilizar el logotipo del header */
+header a[rel="home"] img {
   border-radius: 8px;
-
   background-color: #f2f2f2;
 }
 
-header nav ul li {
+/* 2. Enlaces del menú principal del header*/
+header nav[aria-label="Navegación principal"] a {
   text-decoration: underline;
-
   font-weight: bold;
 }
 
-header nav { aria laber
-
+/* 3. Primer enlace del menú principal*/
+header nav[aria-label="Navegación principal"] li:first-child a {
   color: #0066cc;
+}
 
-}+
+/*4. Migas de pan (breadcrumb)*/
+nav[aria-label="Ruta de navegación"] a {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/*5. Título principal del artículo*/
+main article > header h1 {
+  font-size: 2rem;
+  color: #222;
+}
+
+/* 6. Nombre del autor*/
+article figcaption p:first-of-type {
+  font-weight: bold;
+  color: #333;
+}
+
+/* 7. Color del tiempo de lectura*/
+article figcaption p:nth-of-type(2) span {
+  color: #888;
+}
+
+/* 8. Listas dentro de "Puntos destacados"*/
+section:has(> h2:nth-child(1)) ul li {
+  padding-left: 1.2rem;
+  list-style-type: square;
+}
+
+/* 9. CTA dentro de “Puntos destacados”*/
+section:has(> h2:nth-child(1)) aside a {
+  background-color: #ffefc2;
+  padding: 6px 10px;
+}
+
+/* 10. <em> solo dentro de listas del artículo*/
+article ul em,
+article ol em {
+  font-style: italic;
+  color: #c00;
+}
+
+/*11. <h3> dentro de Paso 1*/
+section[aria-labelledby="paso-1"] h3 {
+  color: #006699;
+}
+
+/* 12. <aside> dentro de Paso 1*/
+section[aria-labelledby="paso-1"] > aside {
+  background-color: #f7fbff;
+  border: 1px solid #cce4ff;
+  padding: 1rem;
+}
+
+/*13. Enlaces dentro de “Medios de pago”*/
+section[aria-labelledby="pagos"] a {
+  color: #0044aa;
+  text-decoration: underline;
+}
+
+/* 14. Listas dentro de Paso 3*/
+section[aria-labelledby="paso-3"] ul {
+  margin-left: 1.5rem;
+  list-style-type: circle;
+}
+
+/* 15. Enlaces del índice lateral*/
+aside nav[aria-label="Índice del artículo"] a {
+  color: #990000;
+}
+
+/*16. CTA lateral “¡Llegó el momento!”*/
+aside section[aria-label="Promoción lateral"] {
+  background-color: #fff2f2;
+  padding: 1rem;
+  border-left: 4px solid #ff6b6b;
+}
+
+/* 17. Estilizar <p> del footer*/
+footer > p {
+  text-align: center;
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* 18. Segundo <section> dentro de Paso 2*/
+section[aria-labelledby="paso-2"] > section:nth-of-type(2) {
+  border: 1px dashed #aaa;
+  padding: 1rem;
+}
+
+/* 19. Enlaces dentro de listas del artículo-*/
+article li a {
+  color: #cc6600;
+}
+
+/* 20. <strong> dentro de Paso 1*/
+section[aria-labelledby="paso-1"] strong {
+  color: #005577;
+  font-weight: 700;
+}
+
+/*21. Hover del menú principal*/
+header nav[aria-label="Navegación principal"] a:hover {
+  color: #0099cc;
+}
+
+/*22. Enlaces visitados del menú principal*/
+header nav[aria-label="Navegación principal"] a:visited {
+  color: #663399;
+}
+
+/*23. Enlace activo del menú principal*/
+header nav[aria-label="Navegación principal"] a:active {
+  opacity: 0.7;
+}
+
+/*24. Primer <li> de “Puntos destacados”*/
+section:has(> h2:nth-child(1)) ul li:first-child {
+  background-color: #fff7cc;
+}
+
+/*25. Último <li> dentro de Paso 3*/
+section[aria-labelledby="paso-3"] ul li:last-child {
+  font-style: italic;
+  color: #990000;
+}
+
+/* 26. <p> impares dentro de cualquier <section>*/
+section > p:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* 27. Segundo <h2> dentro del artículo*/
+article h2:nth-of-type(2) {
+  font-size: 1.9rem;
+}
+
+/* 28. Primer enlace dentro del footer*/
+footer a:first-of-type {
+  text-decoration: underline;
+}
+
+/* 29. Enlace “Crear tienda gratis” del header*/
+header nav[aria-label="Accesos"] li:last-child a {
+  background-color: #0074d9;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+/* 30. :focus en enlaces del menú principal*/
+header nav[aria-label="Navegación principal"] a:focus {
+  outline: 3px solid #ff6600;
+}
+
+/* 31. :focus-visible en enlaces del índice lateral*/
+aside nav[aria-label="Índice del artículo"] a:focus-visible {
+  outline: 2px dashed #333;
+}
+
+/* 32. Hover en <li> del menú principal*/
+header nav[aria-label="Navegación principal"] li:hover {
+  background-color: #eefaff;
+}
+
+/* 33. Enlaces dentro de <strong>*/
+strong a {
+  color: #cc5500;
+  font-weight: bold;
+}
+
+/* 34. Enlaces dentro de <em>*/
+em a {
+  color: #aa0000;
+  text-decoration: underline;
+}
+
+/*  35. Primer enlace dentro de cada <section>*/
+section a:first-of-type {
+  font-weight: bold;
+  color: #2255aa;
+}
+
+/* 36. Hover sobre <ul> del menú principal*/
+header nav[aria-label="Navegación principal"] ul:hover {
+  background-color: #f0f8ff;
+}
+
+/*37. Primer <section> dentro del <article>*/
+article > section:first-of-type {
+  border-top: 4px solid #0088cc;
+}
+
+/*38. Ocultar enlaces con title="Más info"*/
+a[title*="Más info"] {
+  display: none;
+}
+
+/* 39. Enlaces sin target*/
+a:not([target]) {
+  border-bottom: 1px dotted #aaa;
+}
+
+/*40. Hover en imágenes dentro de figure*/
+figure img:hover {
+  transform: scale(1.03);
+  transition: 0.2s ease-in-out;
+}
