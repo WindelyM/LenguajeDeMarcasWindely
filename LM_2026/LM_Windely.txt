@@ -1,0 +1,31 @@
+1.Explica con tus palabras qué es un lenguaje de marcas y por qué se siguen utilizando hoy en día.
+
+Un lenguaje de marcas o de marcados sirve para codificar, o estructurar a un documento o una página web através de etiquetas descriptivas, 
+adecuadas, de manera que este sea más comprensible tanto para humanos como navegadores, el lenguaje es el encargado
+de elejir las etiquetas necesarias para representar la información de manera estructurada para representar lo que  queremos.
+
+2.Idica cuál es la diferencia más importante entre XML, JSON y YAML según lo que tú has entendido.
+(No hace falta detalle técnico, solo lo esencial que recuerdes.)
+XML eXtension Markup Languaje 
+JSON está basado en Javascript, es parecido a Python
+YAML Yet another Markup Languaje o  Ain´t a Markup Languaje
+
+3.Escribe un ejemplo realista donde JSON sería más adecuado que XML, y otro donde XML podría seguir siendo útil.
+
+Por ejemplo, para un sistema de gestión de hospitales, ya que XMl, sería capaz de transefir los datos
+de un hospital a otros de manera clara, concisa y rápida y sin perdida de información, al pasar de uno a otro.
+
+
+4.Indica qué crees que significa que un documento esté “bien formado” y por qué es importante.
+
+Un documento bien formado es aquel el cual sigue las reglas de la sintaxis de XML, como indentación, apertura y cerrado 
+correcto de las etiquetas, etc es importante ya que el hecho de que esté bien formado ayuda a la hora de que este sea interpretado,
+y de transmitir los datos de manera correcta.
+
+5.Explica para qué sirven los namespaces en XML, pero sin usar definiciones técnicas: dime para qué crees que ayudan.
+
+6.Menciona un caso en el que hayas visto, en tu investigación, que YAML se usa en empresas o proyectos actuales.
+
+7.Escribe algo que hayas aprendido que antes no sabías sobre lenguajes de marcas.
+
+Que la estructura de los Lenguajes de marcas se guarda en un documento conocido como DTD
