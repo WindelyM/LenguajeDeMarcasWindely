@@ -1,0 +1,67 @@
+{
+  "tienda": {
+    "nombre": "TechNova",
+
+    "moneda": "EUR",
+
+    "pais": "ES",
+
+    "abierta": true,
+
+    "iva": 21,
+
+    "envio_gratis_desde": 49.99,
+
+    "telefono_soporte": null
+  },
+
+  "direccion": {
+    "ciudad": "Rota",
+
+    "codigo_postal": "11520"
+  },
+
+  "ultima_actualizacion": "2026-01-07T13:15:00+01:00",
+
+  "catalogo": {
+    "categorias": ["movil", "audio", "gaming"],
+
+    "productos": [
+      {
+        "id": 1234,
+        "nombre": "Iphone 16",
+        "marca": "Apple",
+        "categoria": "Telefonía",
+        "precio": { "precioBase": 700, "ivaPct": 21 },
+
+        "stock": [{ "almacen": "Cádiz", "unidades": 1234 }],
+        "activo": true,
+        "tags": "Tecnologia"
+      },
+
+      {
+        "id": 1467,
+        "nombre": "Asus tuf A15",
+        "marca": "Asus",
+        "categoria": "Computación",
+        "precio": { "precioBase": 900, "ivaPct": 21 },
+
+        "stock": [{ "almacen": "Algeciras", "unidades": 450 }],
+        "activo": true,
+        "tags": "Tecnologia"
+      },
+
+      {
+        "id": 1569,
+        "nombre": "Papel seca manos",
+        "marca": "Scott",
+        "categoria": "Hogar",
+        "precio": { "precioBase": 6, "ivaPct": 21 },
+
+        "stock": [{ "almacen": "Cádiz", "unidades": 700 }],
+        "activo": true,
+        "tags": "papel"
+      }
+    ]
+  }
+}
