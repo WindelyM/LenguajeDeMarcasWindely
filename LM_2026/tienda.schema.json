@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+
+  "title": "Tienda demo",
+
+  "type": "object",
+
+  "properties": {
+    "$schema": { "type": "string" },
+
+    "tienda": {
+      "type": "object",
+
+      "properties": {
+        "nombre": { "type": "string", "minLength": 5 },
+
+        "abierta": { "type": "boolean" },
+
+        "iva": { "type": "integer", "minimum": 0, "maximum": 100 },
+
+        "telefono_soporte": { "type": ["string", "null"] },
+
+        "direccion": {
+          "type": "object",
+
+          "properties": {
+            "ciudad": { "type": "string" },
+
+            "codigo_postal": { "type": "string", "pattern": "^[0-9]{5}$" }
+          },
+
+          "required": ["ciudad", "codigo_postal"],
+
+          "additionalProperties": false
+        }
+      },
+
+      "required": ["nombre", "abierta", "iva", "direccion"],
+
+      "additionalProperties": false
+    }
+  },
+
+  "required": ["tienda"],
+
+  "additionalProperties": false
+}

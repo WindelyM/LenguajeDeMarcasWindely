@@ -22,7 +22,12 @@
   },
 
   "ultima_actualizacion": "2026-01-07T13:15:00+01:00",
-
+  "usuarios": {
+    "id": 1345,
+    "nombre": "Windely",
+    "email": "123@gmail.com",
+    "premium": true
+  },
   "catalogo": {
     "categorias": ["movil", "audio", "gaming"],
 
@@ -34,7 +39,10 @@
         "categoria": "Telefonía",
         "precio": { "precioBase": 700, "ivaPct": 21 },
 
-        "stock": [{ "almacen": "Cádiz", "unidades": 1234 }],
+        "stock": [
+          { "almacen": "Cádiz", "unidades": 1234 },
+          { "almacen": "Sevilla", "unidades": 123 }
+        ],
         "activo": true,
         "tags": "Tecnologia"
       },
@@ -43,24 +51,45 @@
         "id": 1467,
         "nombre": "Asus tuf A15",
         "marca": "Asus",
-        "categoria": "Computación",
+        "categoria": { "id": 125, "pertenece": "informática" },
         "precio": { "precioBase": 900, "ivaPct": 21 },
 
         "stock": [{ "almacen": "Algeciras", "unidades": 450 }],
         "activo": true,
-        "tags": "Tecnologia"
+        "tags": "Tecnologia",
+        "shipping": { "peso": 2, "fragil": true },
+        "variantes": [
+          { "id": 12, "color": "gris", "luces": true, "stock": 123 }
+        ]
       },
-
       {
         "id": 1569,
         "nombre": "Papel seca manos",
         "marca": "Scott",
-        "categoria": "Hogar",
+        "categoria": { "id": 12, "pertenece": "hogar" },
         "precio": { "precioBase": 6, "ivaPct": 21 },
 
-        "stock": [{ "almacen": "Cádiz", "unidades": 700 }],
+        "stock": [
+          { "almacen": "Cádiz", "unidades": 700 },
+          { "almace": "Algeciras", "unidades": 23 }
+        ],
         "activo": true,
-        "tags": "papel"
+        "tags": "papel",
+        "shipping": { "peso": 1, "fragil": false }
+      },
+
+      {
+        "pedidoid": null,
+        "usuarioid": null,
+        "fecha": null,
+        "lineasDeCompra": {
+          "productoId": null,
+          "cantidad": null,
+          "precioUnitario": null
+        },
+        "subtotal": null,
+        "iva": null,
+        "total": null
       }
     ]
   }

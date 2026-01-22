@@ -1,0 +1,19 @@
+{
+  "$schema": "./tienda.schema.json",
+
+  "tienda": {
+    "nombre": "abcde",
+
+    "abierta": true,
+
+    "iva": 100,
+
+    "telefono_soporte": "123",
+
+    "direccion": {
+      "ciudad": "Rota",
+
+      "codigo_postal": "11520"
+    }
+  }
+}
