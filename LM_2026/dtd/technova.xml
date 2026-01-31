@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <?xml-model href="technova.dtd"?>
+
+ <!DOCTYPE ec:ecommerce SYSTEM "ecommerce.dtd">
+<tienda> 
+<nombre> Technova </nombre>
+<moneda> Euro </moneda>
+<pais> España </pais>
+
+ </tienda>
+]

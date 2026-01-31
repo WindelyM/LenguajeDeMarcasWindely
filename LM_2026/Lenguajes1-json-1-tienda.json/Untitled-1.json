@@ -1,0 +1,149 @@
+{
+  "tienda": {
+    "nombre": "TechNova",
+
+    "moneda": "EUR",
+
+    "pais": "ES",
+
+    "abierta": true,
+
+    "iva": 21,
+
+    "envio_gratis_desde": 49.99,
+
+    "telefono_soporte": null,
+
+    "direccion": {
+      "ciudad": "Rota",
+
+      "codigo_postal": "11520"
+    },
+
+    "ultima_actualizacion": "2026-01-07T13:15:00+01:00"
+  },
+  "usuarios": {
+    "id": "user1",
+    "nombre": "Juan",
+    "e-mail": "1234@gmail.com",
+    "premium": true
+  },
+  "catalogo": {
+    "categorias": ["movil", "audio", "gaming"],
+
+    "productos": [
+      {
+        "id": "SKU-1001",
+
+        "nombre": "Auriculares ANC Pro",
+
+        "marca": "SonicWave",
+
+        "categoriaId": "audio",
+
+        "precio": {
+          "base": 79.99,
+
+          "ivaPct": 21
+        },
+
+        "stock": [
+          { "almacen": "MAD-01", "unidades": 12 },
+
+          { "almacen": "BCN-01", "unidades": 4 }
+        ],
+
+        "activo": true,
+
+        "shipping": { "peso": 0.25, "frágil": true },
+
+        "tags": ["anc", "bluetooth", "viaje", 18]
+      },
+      {
+        "id": "SKU-1023",
+
+        "nombre": "Asus tuf A15",
+
+        "marca": "Asus",
+
+        "categoriaId": "computación",
+
+        "precio": {
+          "base": 979.99,
+
+          "ivaPct": 21
+        },
+
+        "stock": [
+          { "almacen": "MAD-01", "unidades": 21 },
+
+          { "almacen": "BCN-01", "unidades": 10 }
+        ],
+        "variantes": [
+          {
+            "id": "SKU-1022",
+            "atributos": { "color": "negro", "almacenamiento": "1TB" },
+            "stock": 5
+          },
+          {
+            "id": "SKU-1011",
+            "atributos": { "color": "gris", "almacenamiento": "500MB" },
+            "stock": 2
+          }
+        ],
+        "activo": true,
+
+        "shipping": { "peso": 0.25, "frágil": true },
+
+        "tags": ["portátil", "tecnología", "material de oficina"]
+      },
+      {
+        "id": "SAF-1201",
+
+        "nombre": "Papel seca manos",
+
+        "marca": "Scottex",
+
+        "categoriaId": "hogar",
+
+        "precio": {
+          "base": 5.88,
+
+          "ivaPct": 21
+        },
+
+        "stock": [
+          { "almacen": "MAD-01", "unidades": 65 },
+
+          { "almacen": "BCN-01", "unidades": 74 }
+        ],
+
+        "activo": true,
+
+        "tags": ["papel", "cocina", "limpieza"]
+      }
+    ],
+
+    "pedidos": [
+      {
+        "pedidoId": "FSE-123",
+
+        "usuarioId": "usuario2",
+
+        "fecha": "dd-mm-yyyy",
+
+        "estado": "disponible",
+
+        "lineas": [
+          { "productoid": "EFX-123" },
+          { "cantidad": 3 },
+          { "precioUnitario": 12 }
+        ],
+
+        "subtotal": null,
+        "iva": null,
+        "total": null
+      }
+    ]
+  }
+}
